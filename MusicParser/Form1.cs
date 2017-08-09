@@ -20,27 +20,9 @@ namespace MusicParser
             song = new Song();
             song.Tempo = 120;
 
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(49), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(47), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(45), 2));
-
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(49), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(47), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(45), 2));
-
-            for (int i = 0; i < 4; i++)
-            {
-                song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(45), 8));
-            }
-            for (int i = 0; i < 4; i++)
-            {
-                song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(47), 8));
-            }
-
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(49), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(47), 4));
-            song.Notes.Add(new Note(Note.ConvertKeyValueToFrequency(45), 2));
-
+            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("A", 3), 4));
+            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("G", 2), 4));
+            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("F", 2), 2));
         }
 
         private void btnTest_Click(object sender, EventArgs e)
