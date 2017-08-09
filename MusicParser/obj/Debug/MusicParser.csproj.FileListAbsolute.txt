@@ -1,0 +1,9 @@
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\bin\Debug\MusicParser.exe.config
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\bin\Debug\MusicParser.exe
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\bin\Debug\MusicParser.pdb
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.csprojResolveAssemblyReference.cache
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.Properties.Resources.resources
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.csproj.GenerateResource.Cache
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.exe
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.pdb
+c:\users\jackson\documents\visual studio 2017\Projects\MusicParser\MusicParser\obj\Debug\MusicParser.Form1.resources
