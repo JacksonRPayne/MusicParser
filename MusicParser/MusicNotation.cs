@@ -26,6 +26,7 @@ namespace MusicParser
         /// <returns></returns>
         protected int convertFlagToMiliseconds(int tempo)
         {
+            //Finds the milisecond value of the whole note then divides it by the flag
             double wholeNote = (60000D / tempo)*4D;
             double division = wholeNote / Flag;
 

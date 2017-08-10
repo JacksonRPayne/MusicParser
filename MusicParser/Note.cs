@@ -61,6 +61,7 @@ namespace MusicParser
 
         public override void Play(int tempo)
         {
+            //Finds the duration of the note in miliseconds based off of the tempo then plays it
             int duration = convertFlagToMiliseconds(tempo);
             Console.Beep(Frequency, duration);
         }

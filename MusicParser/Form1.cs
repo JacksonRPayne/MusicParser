@@ -18,11 +18,10 @@ namespace MusicParser
             InitializeComponent();
 
             song = new Song();
-            song.Tempo = 120;
+            song.Tempo = 90;
 
-            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("A", 3), 4));
-            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("G", 2), 4));
-            song.Notes.Add(new Note(Note.ConvertLetterNoteToFrequency("F", 2), 2));
+            //song.GetNotesFromString("A,4,4; G,3,4; F,3,4;R,4;A,4,4; G,3,4; F,3,4;R,4;");
+            song.GetNotesFromString("A,4,4");
         }
 
         private void btnTest_Click(object sender, EventArgs e)
