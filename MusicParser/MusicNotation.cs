@@ -10,7 +10,7 @@ namespace MusicParser
                 if (value > 0)
                     _flag = value;
                 else
-                    throw new Exception("Flag was set below 0");
+                    throw new Exception("Flag must be greater than zero.");
             }
         }
 

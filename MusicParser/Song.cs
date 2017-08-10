@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MusicParser
 {
@@ -31,9 +29,15 @@ namespace MusicParser
         /// </summary>
         public void Play()
         {
-            for (int i = 0; i < Notes.Count; i++)
+            try
             {
-                Notes[i].Play(Tempo);
+                for (int i = 0; i < Notes.Count; i++)
+                {
+                    Notes[i].Play(Tempo);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -49,26 +53,44 @@ namespace MusicParser
             string[] Data = trimmedString.Split(';');
             string[] dataSpecifics;
 
-            //Loops through the data
-            for (int i = 0; i < Data.Length - 1; i++)
+            try
             {
-                //Splits data by comma
-                dataSpecifics = Data[i].Split(',');
+                //Loops through the data
+                for (int i = 0; i < Data.Length - 1; i++)
+                {
+                    //Splits data by comma
+                    dataSpecifics = Data[i].Split(',');
 
-                //Checks if its a rest or a note then creates it
-                if (dataSpecifics[0] == "R")
-                {
-                    Notes.Add(new Rest(Convert.ToInt32(dataSpecifics[1])));
+                    //Checks if its a rest or a note then creates it
+                    if (dataSpecifics[0] == "R")
+                    {
+                        Notes.Add(new Rest(Convert.ToInt32(dataSpecifics[1])));
+                    }
+                    else
+                    {
+                        Notes.Add(new Note(
+                            Note.ConvertLetterNoteToFrequency(dataSpecifics[0], Convert.ToInt32(dataSpecifics[1])),
+                            Convert.ToInt32(dataSpecifics[2])));
+                    }
                 }
-                else
-                {
-                    Notes.Add(new Note(
-                        Note.ConvertLetterNoteToFrequency(dataSpecifics[0], Convert.ToInt32(dataSpecifics[1])),
-                        Convert.ToInt32(dataSpecifics[2])));
-                }
+            }catch (KeyNotFoundException)
+            {
+                MessageBox.Show("The note you entered does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            catch (FormatException)
+            {
+                MessageBox.Show("Note data was entered incorrectly.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("A note was not supplied the right criteria.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
     }
 }

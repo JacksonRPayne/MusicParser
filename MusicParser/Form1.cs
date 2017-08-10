@@ -18,10 +18,9 @@ namespace MusicParser
             InitializeComponent();
 
             song = new Song();
-            song.Tempo = 90;
+            song.Tempo = 100;
 
-            //song.GetNotesFromString("A,4,4; G,3,4; F,3,4;R,4;A,4,4; G,3,4; F,3,4;R,4;");
-            song.GetNotesFromString("A,4,4");
+            song.GetNotesFromString("Ab,4,4; C#,3,16; G,4,1;");
         }
 
         private void btnTest_Click(object sender, EventArgs e)

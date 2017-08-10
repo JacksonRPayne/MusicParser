@@ -26,7 +26,7 @@ namespace MusicParser
                 if (value > 0)
                     _frequency = value;
                 else
-                    throw new Exception("Frequency must be greater than zero");
+                    throw new Exception("Frequency must be greater than zero.");
             }
         }
 
@@ -63,7 +63,11 @@ namespace MusicParser
         {
             //Finds the duration of the note in miliseconds based off of the tempo then plays it
             int duration = convertFlagToMiliseconds(tempo);
-            Console.Beep(Frequency, duration);
+
+            if (Frequency > 37 && Frequency < 32767)
+                Console.Beep(Frequency, duration);
+            else
+                throw new Exception("The frequency must be in between 37HZ and 32767HZ.");
         }
 
     }
