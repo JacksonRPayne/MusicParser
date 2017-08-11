@@ -13,7 +13,7 @@ namespace MusicParser
                 if (value > 0)
                     _tempo = value;
                 else
-                    throw new Exception("Tempo must be above zero");
+                    throw new Exception("Tempo must be greater than zero.");
             }
         }
 
